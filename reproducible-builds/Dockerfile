@@ -21,6 +21,8 @@ ENV ANDROID_BUILD_TOOLS_VERSION         34.0.0
 ENV ANDROID_HOME /usr/local/android-sdk-linux
 ENV PATH         ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/cmdline-tools/bin
 
+RUN git config --global --add safe.directory "*"
+
 RUN cd /usr/local/
 RUN wget -q "https://dl.google.com/android/repository/${ANDROID_COMMAND_LINE_TOOLS_FILENAME}"
 RUN unzip ${ANDROID_COMMAND_LINE_TOOLS_FILENAME} -d /usr/local/android-sdk-linux
